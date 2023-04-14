@@ -36,7 +36,7 @@ public class MyLinkedList<T> implements List<T>{
 
     @Override
     public int getSize() {
-        return 0;
+        return size;
     }
 
     @Override
@@ -46,7 +46,9 @@ public class MyLinkedList<T> implements List<T>{
 
     @Override
     public void printList() {
-
+        for(int i = 0;i<getSize();i++){
+            System.out.print(get(i) + " ");
+        }
     }
 
     @Override
