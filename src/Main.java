@@ -12,5 +12,7 @@ public class Main {
         System.out.println("\n" + arrayList.get(2));
         arrayList.remove(3);
         arrayList.printList();
+
+
     }
 }
