@@ -30,7 +30,7 @@ public class MyArrayList <T> implements  List<T>{
     }
 
     @Override
-    public int size() {
+    public int getSize() {
         return size;
     }
 
@@ -54,7 +54,7 @@ public class MyArrayList <T> implements  List<T>{
         private int cursor;
         @Override
         public boolean hasNext() {
-            return cursor < size();
+            return cursor < getSize();
         }
 
         @Override
