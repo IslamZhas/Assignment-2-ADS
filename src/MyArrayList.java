@@ -47,6 +47,19 @@ public class MyArrayList <T> implements  List<T>{
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new MyIterator();
+    }
+
+    private class MyIterator implements Iterator<T>{
+        private int cursor;
+        @Override
+        public boolean hasNext() {
+            return cursor < size();
+        }
+
+        @Override
+        public T next() {
+            return get(cursor++);
+        }
     }
 }
