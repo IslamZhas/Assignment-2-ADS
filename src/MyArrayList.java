@@ -43,6 +43,15 @@ public class MyArrayList <T> implements  List<T>{
                 continue;
             newArr2[k++] = arr[i];
         }
+        arr = newArr2;
+        size--;
+    }
+
+    @Override
+    public void printList() {
+        for(int i = 0;i<getSize();i++){
+            System.out.print(arr[i] + " ");
+        }
     }
 
     @Override

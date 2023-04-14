@@ -3,4 +3,5 @@ public interface List<T> extends Iterable<T> {
     T get(int index);
     int getSize();
     void remove(int index);
+    void printList();
 }
