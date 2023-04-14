@@ -6,6 +6,7 @@ public class MyLinkedList<T> implements List<T>{
         private Node next;
         public Node(T data){
             this.data = data;
+            next = null;
         }
     }
     private Node<T> head;
@@ -41,7 +42,17 @@ public class MyLinkedList<T> implements List<T>{
 
     @Override
     public void remove(int index) {
-
+        if(index == 0){
+            head = head.next;
+        }
+        else{
+            Node<T> current = head;
+            for(int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            current.next = current.next.next;
+        }
+        size--;
     }
 
     @Override

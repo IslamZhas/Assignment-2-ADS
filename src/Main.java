@@ -23,5 +23,8 @@ public class Main {
         linkedList.add(5);
         linkedList.add(6);
         linkedList.printList();
+        linkedList.remove(3);
+        System.out.println("\n");
+        linkedList.printList();
     }
 }
