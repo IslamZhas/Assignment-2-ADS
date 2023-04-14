@@ -8,17 +8,30 @@ public class MyLinkedList<T> implements List<T>{
             this.data = data;
         }
     }
-    private Node head;
-
+    private Node<T> head;
+    private Node<T> tail;
+    private int size;
 
     @Override
     public void add(T element) {
-
+        Node<T> newNode = new Node<>(element);
+        if(head == null){
+            head = tail = newNode;
+        }
+        else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        size++;
     }
 
     @Override
     public T get(int index) {
-        return null;
+        Node<T> current = head;
+        for(int i = 0; i < index; i++){
+            current = current.next;
+        }
+        return current.data;
     }
 
     @Override
@@ -38,6 +51,20 @@ public class MyLinkedList<T> implements List<T>{
 
     @Override
     public Iterator<T> iterator() {
-        return null;
+        return new MyIterator();
+    }
+    private class MyIterator implements Iterator<T>{
+        Node<T> cursor = head;
+        @Override
+        public boolean hasNext() {
+            return cursor != null;
+        }
+
+        @Override
+        public T next() {
+            T data = cursor.data;
+            cursor = cursor.next;
+            return data;
+        }
     }
 }
