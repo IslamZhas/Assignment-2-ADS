@@ -9,8 +9,8 @@ public class MyArrayList <T> implements  List<T>{
     }
 
     private void increaseSize(){
-        int newSize = (int)(arr.length * 1.5);
-        Object[] newArr = new Object[newSize];
+        int biggerSize = (int)(arr.length * 1.5);
+        Object[] newArr = new Object[biggerSize];
         for(int i = 0; i < arr.length;i++){
             newArr[i] = arr[i];
         }
@@ -36,7 +36,13 @@ public class MyArrayList <T> implements  List<T>{
 
     @Override
     public void remove(int index) {
-
+        int smallerSize = arr.length - 1;
+        Object[] newArr2 = new Object[smallerSize];
+        for(int i = 0,k = 0; i < arr.length;i++){
+            if(index == i)
+                continue;
+            newArr2[k++] = arr[i];
+        }
     }
 
     @Override
