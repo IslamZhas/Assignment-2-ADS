@@ -9,16 +9,18 @@ public class MyLinkedList<T> implements List<T>{
             next = null;
         }
     }
-    private Node<T> head;
-    private Node<T> tail;
-    private int size;
+    private Node<T> head;//entry point
+    private Node<T> tail;//last node
+    private int size;//size of linked list
 
     @Override
     public void add(T element) {
         Node<T> newNode = new Node<>(element);
+        //if head(first node) is null, the head and tail will store newNode
         if(head == null){
             head = tail = newNode;
         }
+        // else the last node(tail) will store the newNode
         else {
             tail.next = newNode;
             tail = newNode;
@@ -27,6 +29,7 @@ public class MyLinkedList<T> implements List<T>{
     }
 
     @Override
+    //Create the node that is equal to current node(head), and through iterating
     public T get(int index) {
         Node<T> current = head;
         for(int i = 0; i < index; i++){
