@@ -55,6 +55,54 @@ public class MyArrayList <T> implements  List<T>{
     }
 
     @Override
+    public boolean contains(Object o) {
+        for(int i = 0; i<arr.length;i++){
+            if(arr[i] == o){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public void clear() {
+        int count = 0;
+        for(int i = 0; i < arr.length;i++){
+            arr[i] = null;
+        }
+        size = 0;
+    }
+
+    @Override
+    public void sort() {
+
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        int index = 0;
+        for(int i =0;i<arr.length;i++){
+            if(arr[i] == o){
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    @Override
+    public int lastIndexOf(Object o) {
+        int index = 0;
+        for(int i =0;i<arr.length;i++){
+            if(arr[i] == o){
+                index = i;
+            }
+        }
+        return index;
+    }
+
+
+    @Override
     public Iterator<T> iterator() {
         return new MyIterator();
     }

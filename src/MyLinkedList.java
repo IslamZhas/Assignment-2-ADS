@@ -66,6 +66,31 @@ public class MyLinkedList<T> implements List<T>{
     }
 
     @Override
+    public boolean contains(Object o) {
+        return false;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public void sort() {
+
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        return 0;
+    }
+
+    @Override
+    public int lastIndexOf(Object o) {
+        return 0;
+    }
+
+    @Override
     public Iterator<T> iterator() {
         return new MyIterator();
     }

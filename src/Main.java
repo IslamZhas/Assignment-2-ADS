@@ -1,18 +1,25 @@
 public class Main {
     public static void main(String[] args) {
         MyArrayList<Integer> arrayList = new MyArrayList<>();
-        arrayList.add(1);
         arrayList.add(2);
-        arrayList.add(3);
         arrayList.add(4);
         arrayList.add(5);
-        arrayList.add(6);
+        arrayList.add(5);
+        arrayList.add(5);
+        arrayList.add(8);
         arrayList.printList();
         System.out.println("\n" + arrayList.getSize());
         System.out.println("\n" + arrayList.get(2));
         arrayList.remove(3);
         arrayList.printList();
+        if(arrayList.contains(3)) System.out.println("It contains");
+        else System.out.println("Not contain" + "\n");
+        System.out.println(arrayList.indexOf(5) + "\n");
+        arrayList.printList();
+        System.out.println("\n" + arrayList.lastIndexOf(5));
 
+
+/*
         System.out.println("\n" + "---------------------------------------");
 
         MyLinkedList<Integer> linkedList = new MyLinkedList<>();
@@ -26,5 +33,9 @@ public class Main {
         linkedList.remove(3);
         System.out.println("\n");
         linkedList.printList();
+
+ */
     }
+
+
 }

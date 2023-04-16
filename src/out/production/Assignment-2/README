@@ -1,0 +1,33 @@
+MyLinkedList:
+
+
+General info: Create head(first, entry point), tail(last node) and size.
+Create class Node that includes variable data, which is Generic that refers to data, included in node, and next
+that refers to next node.
+
+
+Methods:
+add(T element): It has parameter that gets element,which should be added to node.
+if head(first node) is null, the head and tail will store newNode,
+else the last node(tail) will store the newNode
+Then size will be incremented
+
+
+get(int index): It has parameter that gets index of element that we want to get.
+Create the node that is equal to current node(head),
+and through for loop the current will be the node that we needed.
+After the loop, this method will return the value of data of node
+
+
+getSize(): It returns size
+
+
+remove(int index): It has parameter "index" that shows the index of element that will be removed
+If index is equal to 0, the first node(head) will beb replaced by the next
+Else create the node that is equal to current node(head)
+Through for loop, current will refer to the next. There is "i < index -1", because
+the node that is before needed node, will refer to this(node in position of index),
+and after loop, the next node after this node(node in index) will refer to next
+Because of this, the node in index will be skipped.
+Size will be decremented
+
