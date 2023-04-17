@@ -29,6 +29,11 @@ public class MyLinkedList<T> implements List<T>{
     }
 
     @Override
+    public void add(T element, int index) {
+
+    }
+
+    @Override
     //Create the node that is equal to current node(head), and through iterating
     public T get(int index) {
         Node<T> current = head;
@@ -67,12 +72,22 @@ public class MyLinkedList<T> implements List<T>{
 
     @Override
     public boolean contains(Object o) {
+
+        for(int i = 0; i < getSize();i++){
+            if(get(i) == o){
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public void clear() {
-
+        Node<T> temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
     }
 
     @Override
@@ -82,12 +97,23 @@ public class MyLinkedList<T> implements List<T>{
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        int index = -1;
+        for(int i = 0;i<getSize();i++){
+            if(get(i) == o) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        int index = -1;
+        for(int i = 0;i<getSize();i++){
+            if(get(i) == o) index = i;
+        }
+        return index;
     }
 
     @Override

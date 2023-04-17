@@ -16,12 +16,31 @@ public class MyArrayList <T> implements  List<T>{
         }
         arr = newArr;
     }
+    private void addIndex(T element, int index){
+        int biggerSize = (int)(arr.length * 1.5);
+        Object[] newArr = new Object[biggerSize];
+        for(int i = 0; i < arr.length;i++){
+            if(index == i){
+                newArr[index] = element;
+                i=i+1;
+            }
+            newArr[i]=arr[i];
+        }
+        arr = newArr;
+    }
     @Override
     public void add(T element) {
         if(size == arr.length){
             increaseSize();
         }
         arr[size++] = element;
+    }
+    @Override
+    public void add(T element, int index) {
+        if(size == arr.length){
+            addIndex(element, index);
+        }
+        size++;
     }
 
     @Override
@@ -66,7 +85,6 @@ public class MyArrayList <T> implements  List<T>{
 
     @Override
     public void clear() {
-        int count = 0;
         for(int i = 0; i < arr.length;i++){
             arr[i] = null;
         }
@@ -80,7 +98,7 @@ public class MyArrayList <T> implements  List<T>{
 
     @Override
     public int indexOf(Object o) {
-        int index = 0;
+        int index = -1;
         for(int i =0;i<arr.length;i++){
             if(arr[i] == o){
                 index = i;
@@ -92,7 +110,7 @@ public class MyArrayList <T> implements  List<T>{
 
     @Override
     public int lastIndexOf(Object o) {
-        int index = 0;
+        int index = -1;
         for(int i =0;i<arr.length;i++){
             if(arr[i] == o){
                 index = i;
